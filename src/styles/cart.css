@@ -1,0 +1,16 @@
+.lmj-cart {
+    padding: 20px;
+    color: white;
+    background-color: #31b572;
+}
+
+.lmj-panier {
+    display: flex;
+    align-items: center;
+}
+
+.lmj-caddielogo {
+    height: 30px;
+    width: 30px;
+    padding-left: 20px;
+}
