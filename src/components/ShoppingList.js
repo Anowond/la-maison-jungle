@@ -7,14 +7,14 @@ const plantList = [
     "cactus"
 ]
 
+
 const ShoppingList = () => {
-    return <div className="lmj-shoppinglist">
-        <ul>
-            {plantList.map((plant) => (
-                <li>{plant}</li>
-            ))}
-        </ul>
-    </div>
+
+    return <ul>
+        {plantList.map((plant, index) => (
+            <li key={`${plant}-${index}`}>{plant}</li>
+        ))}
+    </ul>
 }
 
 export default ShoppingList
