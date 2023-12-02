@@ -1,27 +1,29 @@
 import "../styles/ShoppingList.css"
 import { plantList } from "../datas/plantList"
+import Recommendation from "./Recommendation.js";
+
 
 const ShoppingList = () => {
-
-    let categoryTab = []
-
-    plantList.forEach(element => {
-        categoryTab.push(element.category)
-    })
 
     return (
         <div>
             <ul>
-                {categoryTab.map((categoryElement, index) => (
-                    <li key={`${index}-${categoryElement}`}>{categoryElement}</li>
+                {plantList.map((plant, index) => (
+                    <li key={`${index}-${plant.category}`}>{plant.category}</li>
                 ))}
             </ul>
             <ul className="lmj-plant-list">
-                {plantList.map((plant,index) => (
-                    <li key={`${index}-${plant.name}`} className="lmj-plant-item">{plant.name}{plant.isBestSeller && plant.category === "plante grasse" && <span>🔥</span>}</li>
-                    
+                {plantList.map((plant, index) => (
+                    <div key={plant.name}>
+                        <li key={`${index}-${plant.name}`} className="lmj-plant-item">
+                            {plant.name}
+                            {plant.isBestSeller && <span>🔥</span>}
+                            {plant.isSpecialOffer && <div>SOLDES ! ✨</div>}
+                        </li>
+                    </div>
                 ))}
             </ul>
+            <Recommendation />
         </div>
     )
 
